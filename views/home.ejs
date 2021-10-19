@@ -1,0 +1,47 @@
+<html>
+     <head>
+         <title>
+             <%=title %>
+         </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+         <link rel="stylesheet", href="\css\home.css">
+     </head>
+     <body text-align: center>     
+         <%if(exist=="yes"){%>
+            <script>alert("already exists");
+            </script>
+         <%}%>
+         <h1 id="page-heading">
+             <i class="fas fa-address-book"></i>
+             My Contact List
+            </h1>
+         <div id="contacts-list-container">
+       <ul>
+           <%for(let i of contact_list){%>
+            <li class="contact">
+                <div class="details">
+                <p><%=i.name %></p>
+                <p><%=i.phone %></p>
+            </div>
+            <div class="delete-button">
+                <a href="/d/?phone=<%= i.phone %>">
+                    <i class="fas fa-window-close"></i>
+                </a>
+            </div>
+ </li>
+             <%}%>
+       </ul>
+         </div>
+
+      <form id="new-contact-form" action="/" method="post">
+          <input type="text" name="name" placeholder="enter name" required>
+           <input type="number" name="phone" placeholder="enter phone num">
+           <button type="submit" >Add</button>
+
+      </form>
+   <script type="text/javascript" src="C:\Users\renuj\OneDrive\Documents\newsite\contact_list\assets\js\home.js"></script>
+
+     </body>
+
+
+</html>
