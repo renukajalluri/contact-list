@@ -50,7 +50,7 @@ app.get("/d/",(req,res)=>{
   let phone=(req.query.phone)
 
    let contactIndex = contactList.findIndex((contact) => contact.phone == phone);
-   if( contactIndex){
+   if( contactIndex+1){
          contactList.splice(contactIndex,1);
          // res.redirect("/");
    }
