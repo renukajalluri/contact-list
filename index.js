@@ -62,9 +62,7 @@ app.get("/d/",(req,res)=>{
 });
 
 
-
-
-app.listen(3000,(error)=>{
-   if(error){console.log("There is an error",error)}
-   else{console.log("listening on port 3000")}
-});
+var port_number = process.env.PORT || 3000;
+app.listen(port_number,()=>{
+    console.log("listening on port 3000");    
+})
